@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 
-def alert(subject, body, to,client):
+def alert(subject, body, to):
     # me == my email address
     # you == recipient's email address
     me = "giromohssine98@gmail.com"
@@ -15,7 +15,6 @@ def alert(subject, body, to,client):
     msg['From'] = me
     
     # Create the body of the message (a plain-text and an HTML version).
-    text = "Hi!\nHow are you?\nHere is the link you wanted:\nhttp://www.python.org"
     html = """\
     <html>
       <head></head>
@@ -23,11 +22,12 @@ def alert(subject, body, to,client):
         <p>Hi!<br>
            How are you?<br>
            <br>
-           Here is a new client Ms -- <a href="https://firebase.google.com/">{}</a> -- go to <a href="https://firebase.google.com/">DataBase</a> for more informations.
+           <h4 style="color: #df4759">{}</h4>--<br><br>
+            call your patient for more informations.
         </p>
       </body>
     </html>
-    """.format(client)
+    """.format(body)
     
     # Record the MIME types of both parts - text/plain and text/html.
     part1 = MIMEText(text, 'plain')
@@ -47,9 +47,7 @@ def alert(subject, body, to,client):
     user = "giromohssine98@gmail.com"
     password = "0615167315"
     mail.login(user, password)
-    for x in to:
-        msg['To'] = x
-        mail.sendmail(me, x, msg.as_string())
+    mail.sendmail(me, to, msg.as_string())
     mail.quit()
     
 if __name__ ==  "__main__":
