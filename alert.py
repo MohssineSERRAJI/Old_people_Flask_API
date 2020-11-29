@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 def alert(subject, body, to, color):
     # me == my email address
     # you == recipient's email address
-    me = "giromohssine98@gmail.com"
+    me = "exemple@xx.com"
     
     # Create message container - the correct MIME type is multipart/alternative.
     msg = MIMEMultipart('alternative')
@@ -45,13 +45,13 @@ def alert(subject, body, to, color):
     mail.ehlo()
     
     mail.starttls()
-    user = "giromohssine98@gmail.com"
-    password = "hsguaebuzopoabvl"
+    user = "exemple@xx.com"
+    #password of you emai
+    password = "password"
     mail.login(user, password)
     mail.sendmail(me, to, msg.as_string())
     mail.quit()
     
-if __name__ ==  "__main__":
-    alert("New client *-*", "new client *-*", "sera.mohssine@gmail.com","mohssine")
+
     
     
