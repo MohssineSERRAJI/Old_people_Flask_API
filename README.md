@@ -3,7 +3,7 @@
 #### A web implementation API using Flask.
 
 ## Local Setup:
- 1. Ensure that Python, Flask, flask_cors, firebase_admin installed (either manually, or run `pip install -r requirements.txt`).
+ 1. Ensure that Python, Flask, flask_cors, firebase_admin, config installed (either manually, or run `pip install -r requirements.txt`).
  2. Run *app.py* with `python app.py`.
  3. The demo will be live at [http://localhost:5000/](http://localhost:5000/)
 
